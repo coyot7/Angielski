@@ -1,0 +1,10 @@
+raz;one
+dwa;two
+trzy;tree
+cztery;four
+piec;five
+szesc;six
+siedem;seven
+osiem;eight
+dziewiec;nine
+dziesiec;ten
