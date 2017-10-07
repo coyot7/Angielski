@@ -16,7 +16,7 @@ Losowanie::~Losowanie()
 	delete tabWynikow;
 }
 
-int Losowanie::Start(int iloscLini)
+int Losowanie::Start(int iloscLini, int wylosowanaLiczba)
 {
 	//zapis pukt do tablicy
 	cin.clear();
@@ -48,9 +48,31 @@ int Losowanie::Start(int iloscLini)
 		cout << tabWynikow[i] << endl;
 	}
 	system("pause");*/
-	
+	int temp = wylosowanaLiczba;
+	do
+	{
+		if (tabWynikow[wylosowanaLiczba-1] >= 10 && (wylosowanaLiczba < iloscLini - 1))
+		{
+			wylosowanaLiczba++;
+		}
+		else if (tabWynikow[wylosowanaLiczba-1] >= 10 && (wylosowanaLiczba == iloscLini - 1))
+		{
+			wylosowanaLiczba = 1;
+		}
 
-	return 0;
+		if (tabWynikow[wylosowanaLiczba-1] < 10)
+		{
+			break;
+		}
+
+		if (wylosowanaLiczba == temp)
+		{
+			wylosowanaLiczba = -1;
+			break;
+		}
+	} while (tabWynikow[wylosowanaLiczba-1] >= 10);
+
+	return wylosowanaLiczba;
 }
 
 string Losowanie::DajSlowo(int numerLini)

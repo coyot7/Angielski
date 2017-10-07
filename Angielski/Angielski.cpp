@@ -31,8 +31,15 @@ int _tmain(int argc, _TCHAR* argv[])
 		cin.clear();
 		cin.sync();
 		file.Open(); //dane.txt
-		los.Start(iloscLini);
+		
 		losowanieWyrazu = Losowanie::WylosojLiczbe(iloscLini);
+		losowanieWyrazu = los.Start(iloscLini, losowanieWyrazu);
+		if (losowanieWyrazu == -1)
+		{
+			system("cls");
+			cout << "GRATULACJE !! baza wiedzy wyczerpana ;))" << endl;
+			break;
+		}
 
 		linia = file.DajSlowo(losowanieWyrazu);
 

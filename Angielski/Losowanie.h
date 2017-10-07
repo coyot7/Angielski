@@ -14,7 +14,7 @@ public:
 
 	Losowanie();
 	~Losowanie();
-	int Start(int iloscLini);
+	int Start(int iloscLini, int wylosowanaLiczba);
 	string DajSlowo(int numerLini);
 	static void StartMaszynyLosujacej();
 	static int WylosojLiczbe(int iloscLiczb);
