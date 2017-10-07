@@ -48,19 +48,20 @@ int Losowanie::Start(int iloscLini, int wylosowanaLiczba)
 		cout << tabWynikow[i] << endl;
 	}
 	system("pause");*/
+	int iloscDobrychOdpowiedzi = 30;
 	int temp = wylosowanaLiczba;
 	do
 	{
-		if (tabWynikow[wylosowanaLiczba-1] >= 10 && (wylosowanaLiczba < iloscLini - 1))
+		if (tabWynikow[wylosowanaLiczba - 1] >= iloscDobrychOdpowiedzi && (wylosowanaLiczba < iloscLini))
 		{
 			wylosowanaLiczba++;
 		}
-		else if (tabWynikow[wylosowanaLiczba-1] >= 10 && (wylosowanaLiczba == iloscLini - 1))
+		else if (tabWynikow[wylosowanaLiczba - 1] >= iloscDobrychOdpowiedzi && (wylosowanaLiczba == iloscLini))
 		{
 			wylosowanaLiczba = 1;
 		}
 
-		if (tabWynikow[wylosowanaLiczba-1] < 10)
+		if (tabWynikow[wylosowanaLiczba - 1] < iloscDobrychOdpowiedzi)
 		{
 			break;
 		}
@@ -70,7 +71,7 @@ int Losowanie::Start(int iloscLini, int wylosowanaLiczba)
 			wylosowanaLiczba = -1;
 			break;
 		}
-	} while (tabWynikow[wylosowanaLiczba-1] >= 10);
+	} while (tabWynikow[wylosowanaLiczba - 1] >= iloscDobrychOdpowiedzi);
 
 	return wylosowanaLiczba;
 }

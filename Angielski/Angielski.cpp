@@ -26,7 +26,17 @@ int _tmain(int argc, _TCHAR* argv[])
 	iloscLini = file.LiczbaSlowek();
 	file.Close();
 
-	for (int i = 0; i < 10; i++)
+	int iloscLosowan;
+	cout << "Ile slowek mam wylosowac?" << endl;
+	cin >> iloscLosowan;
+	if (cin.fail() || iloscLosowan < 0)
+	{
+		cout << "Niepoprwana liczba :((" << endl;
+		cout << "Konczymy" << endl;
+		system("exit");
+	}
+
+	for (int i = 0; i < iloscLosowan; i++)
 	{
 		cin.clear();
 		cin.sync();
